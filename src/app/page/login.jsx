@@ -3,10 +3,14 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Form, Input, Button, Card } from 'antd';
+import { useRouter } from 'next/navigation'
 import image from '../favicon.ico'
 
 export default function LoginPage() {
+    const router = useRouter()
     const onFinish = (values) => {
+        console.log("click")
+        router.push('/dashboard')
         console.log('Login form values:', values);
         // Handle login logic here
     };
